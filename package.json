@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon --exec babel-node index.js",
+    "babel-node": "babel-node --presets='@babel/preset-env' --ignore'foo|bar|baz'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/shugyoza/wtf-jsx/issues"
   },
-  "homepage": "https://github.com/shugyoza/wtf-jsx#readme"
+  "homepage": "https://github.com/shugyoza/wtf-jsx#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.8",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {}
 }
