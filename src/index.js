@@ -1,6 +1,15 @@
-require("@babel/core").transform("code", {
-    presets: ["@babel/preset-env"],
-})
+// import 'dotenv/config';
+// require("@babel/core").transform("code", {
+//     presets: ["@babel/preset-env"],
+// });
+// require("@babel/parser").parse("code", {
+//     sourceType: "module",
+//     plugins: [
+//         "jsx",
+//         "flow"
+//     ]
+// });
+
 
 /** @jsx h */
 
@@ -16,13 +25,13 @@ import http from 'http';
 const ITEMS = 'hello there people'.split(' ');
 
 // turn an Array into list items;
-let list = (items) => items.map((p) => `<li> ${p} </li>`);
+let list = (items) => items.map((p) => <li> ${p} </li>);
 
 let vdom = (
-    `<div id="foo">
+    <div id="foo">
         <p>Look, a simple JSX DOM renderer!</p>
-        <ul>${ list(ITEMS) }</ul>
-    </div>`
+        <ul>{ list(ITEMS) }</ul>
+    </div>
 );
 
 // render() converts our 'virtual DOM (see below) to a real DOM tree
@@ -52,8 +61,6 @@ function h(nodeName, attributes, ...args) {
     },
     children: ['Hello!]
 } */
-
-let x = `<div id="try">Hello!</div>`
 
 // function to grab the html tag from an html string
 function extractHTMLTag(htmlStr) {
@@ -96,7 +103,7 @@ function render(vnode) {
 
 const PORT = 4001;
 const server = http.createServer((req, res) => {
-    res.end(vdom);
+    res.end(n);
 }).listen(PORT);
 
 console.log(`Server is up and running at ${PORT}`)
